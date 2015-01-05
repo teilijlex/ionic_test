@@ -1,1 +1,15 @@
 /* Empty. Add your own CSS if you like */
+.login-logo{
+	position: relative;
+	top: 155px;
+	left: 80px;
+}
+.login-form{
+	position: relative;
+	top:165px;
+
+}
+.button-login{
+	position: relative;
+	top: 16px;
+}
