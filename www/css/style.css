@@ -13,3 +13,30 @@
 	position: relative;
 	top: 16px;
 }
+.button-emphasis{ 
+	text-decoration:underline; 
+}
+
+.position-1{
+	width: 50.6%;
+	height: 15%;
+	position: absolute;
+	top: 3%;
+	left: -3px;
+	z-index: 100;
+}
+
+.button.button-top {
+border-color: #FCFAFA;
+background-color: #FCFAF9;
+color: #fff;
+}
+
+.button-height {
+height: 58px;
+}
+
+.orderlist {
+position: relative;
+top: 48px;
+}
