@@ -5,12 +5,20 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic','ngCordova', 'starter.controllers', 'starter.services', 'LoginCtrl'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $cordovaSplashscreen,$timeout) {
+
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+    
+    $rootScope.showLogin = true;
+    $timeout(function() {
+       $cordovaSplashscreen.hide();
+       $rootScope.showLogin = true;
+    }, 1000);
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
@@ -18,6 +26,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+
+
   });
 })
 
@@ -30,6 +41,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
+   .state('login', {
+    url: '/login',
+    templateUrl: 'app/login/login.tpl.html',
+    controller: 'loginCtrl as lc'
+  })
+   
     .state('tab', {
     url: "/tab",
     abstract: true,
@@ -48,15 +65,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.login', {
-    url: '/login',
-    views: {
-      'tab-home': {
-        templateUrl: 'app/login/login.tpl.html',
-        // controller: 'DashCtrl'
-      }
-    }
-  })
+ 
 
   .state('tab.home', {
     url: '/home',
@@ -117,6 +126,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/home');
+  $urlRouterProvider.otherwise('/login');
 
 });
