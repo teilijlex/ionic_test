@@ -4,15 +4,15 @@ Css Document
 	
 -Background Image
 	1.Image source: login/login.tpl.html: 2-4
-```
+
 		<div class = "lbg ">
 			<img src="img/bg.jpg">
 		</div>
-```
+
 	
 2.Image Class "lbg" (login background)
 
-```
+
 	.lbg {
 		z-index:-5;
 		
@@ -35,16 +35,16 @@ Css Document
 		  -ms-filter: blur(5px);
 		  filter: blur(5px);*/
 	}
-```
+
 -Frosted Glass Blur 
 	1.login/login.tpl.html: 49
 
-```
+
 		<div class="glass"></div>
-```
+
 2.Class "glass" 
 	style.css: 338-378
-```		
+		
 		.glass {
 			position: absolute;    						/*position */
 			padding: 10px 0;
@@ -86,27 +86,27 @@ Css Document
 		  background-color: #fff;
 		  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=20)";
 		}	
-```
+
 -Logo
 1.login/login.tpl.html: 20-22
-```
+
 	<div class = "login-logo  " ng-class="{'animated': showLogin,'tada': showLogin}">
 		<img src="http://chanmao.ca/img/logo.png">
 	</div>
-```
+
 	2.Class "login-logo" 
 		* "animated" "tada"  These two classes are in the animate.css library.
 		* These classes will be activated once showLogin's value is true. 
-```		
+		
 		.login-logo{									 /* position */
 			position: relative;
 			top: 170px;
 			left: 70px;
 		}
-```
+
 -Login Form 
 	1.login/login.tpl.html: 24-42
-```
+
 	<form name="loginForm" class ="login-form ">
 	    <span class="input input--hoshi " ng-class="{'input--filled':loginForm.userName.$valid}">
 	      <input class="input__field input__field--hoshi"  type="text" name="userName" ng-model="user.name" required  />
@@ -124,7 +124,7 @@ Css Document
 	      LOGIN
 	    </button>
 	</form>
-```
+
 	
 
 
